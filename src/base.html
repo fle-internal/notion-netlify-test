@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Meet the Team | Learning Equality</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./assets/bootstrap3.min.css" media="all" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./assets/font-awesome.min.css">
+    <link href="./assets/styles.css" media="all" rel="stylesheet" type="text/css">
+    <script src="./assets/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script src="./assets/bootstrap3.min.js" type="text/javascript"></script>
+    <script src="./assets/less.js" type="text/javascript"></script>
+    <script src="./assets/underscore-min.js" type="text/javascript"></script>
+    <script src="./assets/waypoints.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="./assets/cornerbanner.css">
+    <script src="./assets/jquery-ui-min.js" type="text/javascript"></script>
+    <script src="./assets/jquery.cookie.js" type="text/javascript"></script>
+    <script>
+    $(function() {
+        $("#fle-navbar-collapse .submenu").remove();
+    });
+    </script>
+    <script>
+    $(document).ready(function() {
+    $(".button-popover").popover({
+    trigger: "hover"
+    });
+    });
+    </script>
+    <link rel="shortcut icon" href="https://learningequality.org/static/img/fle.ico">
+</head>
+<body data-spy="scroll" data-target="#ka-inner-nav" id="page-top" class="index" style="">
+    <div class="container-fluid" id="wrap">
+        <link rel="stylesheet" href="./assets/google_banner.css">
+        <nav class="navbar navbar-default" id="fle-navbar" role="navigation">
+            <div class="container-fluid">
+                <div class="container-fluid brand-container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#fle-navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand fle-logo" href="https://learningequality.org/"><span><img id="le-logo" alt="LE logo" src="./assets/le-logo.svg"></span></a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="fle-navbar-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown">
+                                <a href="https://learningequality.org/about/team/#" class="dropdown-toggle" data-toggle="dropdown">&nbsp;</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div id="body-content" class="max-container">
+            <div class="container" id="message_container">
+            </div>
+            <div id="about-container" class="container">
+                <div class="row">
+                    <div class="col-sm-3 hidden-xs side-nav">
+                        <div>
+                            <ul class="nav nav-pills nav-stacked">
+                                {% for page in pages %}
+                                <li><a href="{{ page.slug }}.html">{{ page.title }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="about-body" class="col-md-9 col-sm-9 col-xs-12">
+                        <div id="team-content">
+                            <div class="page-header">
+                                <h1>
+                                {{ title }}
+                                </h1>
+                            </div>
+                            {% block content %}
+                            {{ html }}
+                            {% endblock %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<br><br>
+<div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+<h3 class="modal-title" id="myModalLabel"><strong>Contact Information</strong></h3>
+</div>
+<div class="modal-body">
+<strong><address>
+Foundation for Learning Equality<br>9700 Gilman Dr. PMB 323<br>La Jolla, CA 92093
+</address></strong>
+<address>
+<strong>Email:</strong><br>
+<a href="mailto:info@learningequality.org">info@learningequality.org</a>
+</address>
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-primary fle-btn" data-dismiss="modal">Done</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="container-fluid main-footer" id="footer">
+<div class="container">
+<div class="social-area">
+<h5 class="subscription-label">Stay in touch</h5>
+<p>
+<br>
+<a href="https://twitter.com/LearnEQ" title="Visit us on Twitter" target="_blank">
+<img class="media-link" alt="twitter-logo" src="./assets/Twitter.svg">
+</a>
+<a href="https://github.com/learningequality" title="Visit us on Github" target="_blank">
+<img class="media-link" alt="Github-logo" src="./assets/Github.svg">
+</a>
+<a href="https://medium.com/@Learning_Equality" title="Visit us on Medium" target="_blank">
+<img class="media-link" alt="Medium-logo" src="./assets/Medium.svg">
+</a>
+</p>
+</div>
+<div class="footer-break"></div>
+<div class="row sitemap">
+<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+<h5 class="footer-column-headers">Kolibri</h5>
+<br>
+<ul>
+<li><a href="https://learningequality.org/kolibri/">About</a></li>
+<li><a href="https://learningequality.org/download/">Download</a></li>
+<li><a href="http://kolibridemo.learningequality.org/learn/#/topics">Demo</a></li>
+<li><a href="https://learningequality.org/documentation/">Documentation</a></li>
+<li><a href="https://learningequality.org/hardware_grant/">Hardware Grant</a></li>
+</ul>
+</div>
+<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+<h5 class="footer-column-headers">KA Lite</h5>
+<br>
+<ul>
+<li><a href="https://learningequality.org/ka-lite/">About</a></li>
+<li><a href="https://ka-lite.readthedocs.io/en/latest/installguide/install_main.html">Download</a></li>
+<li><a href="http://kalite.overtag.dk:8008/">Demo</a></li>
+<li><a href="https://ka-lite.readthedocs.io/en/latest/">Documentation</a></li>
+</ul>
+</div>
+<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+<h5 class="footer-column-headers">About</h5>
+<br>
+<ul>
+<li><a href="https://learningequality.org/about/">Learning Equality</a></li>
+<li><a href="https://learningequality.org/about/values/">Core values</a></li>
+<li><a href="https://learningequality.org/about/team/">Team</a></li>
+<li><a href="https://learningequality.org/about/board/">Board of Directors</a></li>
+<li><a href="https://learningequality.org/about/supporters/">Supporters and friends</a></li>
+<li><a href="https://learningequality.org/about/press/">Press</a></li>
+<li><a href="https://learningequality.org/about/jobs/">Jobs</a></li>
+<li><a href="https://learningequality.org/about/internships/">Internships</a></li>
+</ul>
+</div>
+<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+<h5 class="footer-column-headers">Community</h5>
+<br>
+<ul>
+<li><a href="https://learningequality.org/translate/">Help translate</a></li>
+<li><a href="https://learningequality.org/blog/">Read our blog</a></li>
+<li><a href="https://learningequality.us6.list-manage.com/subscribe/post?u=023b9af05922dfc7f47a4fffb&amp;id=d56041116d">Subscribe to newsletter</a></li>
+<li><a href="https://community.learningequality.org/">Join the forums</a></li>
+<li><a href="https://learningequality.org/ka-lite/map/add/">Share your story</a></li>
+<li><a href="https://learningequality.org/donate/">Donate</a></li>
+<li><a href="https://form.jotform.com/81265885511158" target="_blank">Contact us</a></li>
+</ul>
+</div>
+</div>
+<div class="row">
+<br><br><br>
+<div class="col-sm-12 cc-text">
+© 2019 Learning Equality&nbsp; <br>
+Learning Equality is a 501(c)3 nonprofit organization<br>
+Except where otherwise noted, content on this site is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International license</a>.
+<br><br>
+</div>
+</div>
+</div>
+</div>
+<script src="./assets/corner-banner.js" type="text/javascript"></script>
+<script>
+function triggerModal(elementHash) {
+// given element ID intelligently trigger modals
+var modalId = '#' + $(elementHash).attr("data-modal-toggle");
+$(modalId).modal();
+// remove hash when hidden
+$(modalId).on('hidden.bs.modal', function (e) {
+window.location.hash = '';
+});
+}
+$(function() {
+// handle hash in URL on page load
+var hash = window.location.hash;
+if (hash) {
+triggerModal(hash);
+}
+// handle toggle of modals on click
+$('.modal-toggle').click(function(event) {
+event.preventDefault();
+window.location.hash = this.id;
+triggerModal('#' + this.id);
+});
+});
+</script>
+</div>
+<script src="./assets/jquery.scrolldepth.min.js" type="text/javascript"></script>
+<script>
+jQuery(function() {
+jQuery.scrollDepth();
+});
+</script>
+</body></html>

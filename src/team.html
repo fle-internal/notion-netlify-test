@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div class="hidden-sm hidden-xs">
+	    <div class="row">
+	        {% for person in people %}
+	        <div class="col-md-3">
+	            <a onclick="javascript:$(&#39;#modal-{{ person.id }}&#39;).modal(&#39;toggle&#39;);">
+	                <img class="img-thumbnail team-img-overlay" src="{{ person.photo.0 }}">
+	            </a>
+	            <h3>
+	                {{ person.name }}
+	            </h3>
+	            <h4>
+	                {{ person.job_title }}
+	            </h4>
+	        </div>
+	        {% endfor %}
+	    </div>
+	</div>
+	{% for person in people %}
+	<div class="modal fade" id="modal-{{ person.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	    <div class="modal-dialog">
+	        <div class="modal-content">
+	            <div class="modal-header center-text">
+	                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	                <img class="img-thumbnail modal-thumbnail" src="{{ person.photo.0 }}">
+	                <h3 class="modal-title" id="myModalLabel"><strong>{{ person.name }}</strong></h3>
+	            </div>
+	            <div class="modal-body">
+	                {{ person.bio }}
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	{% endfor %}
+{% endblock %}
