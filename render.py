@@ -4,6 +4,7 @@ import glob
 import hashlib
 import os
 import shutil
+import sys
 import time
 import urllib.request
 from urllib.parse import urlparse
@@ -129,11 +130,18 @@ def build(clean=False):
 
 def build_repeatedly():
     while True:
-        print("Building...")
-        build()
-        print("Built!")
+        build_once()
         time.sleep(1)
 
 
+def build_once():
+    print("Building...")
+    build()
+    print("Built!")
+
+
 if __name__ == "__main__":
-    build_repeatedly()
+    if "--production" in sys.argv:
+        build_once()
+    else:
+        build_repeatedly()
