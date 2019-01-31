@@ -31,6 +31,8 @@ root = client.get_block(
 
 env = jinja2.Environment(loader=jinja2.FileSystemLoader("./src/"))
 
+os.makedirs("./build/media", exist_ok=True)
+
 
 def get_block_content(block):
     if isinstance(block, BasicBlock):
