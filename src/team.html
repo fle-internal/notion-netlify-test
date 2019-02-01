@@ -1,9 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
-	<div class="hidden-sm hidden-xs">
+	<div id="team-content">
 	    <div class="row">
 	        {% for person in people %}
+	        {% if person.name %}
 	        <div class="col-md-3">
 	            <a onclick="javascript:$(&#39;#modal-{{ person.id }}&#39;).modal(&#39;toggle&#39;);">
 	                <img class="img-thumbnail team-img-overlay" src="{{ person.photo.0 }}">
@@ -15,6 +16,7 @@
 	                {{ person.job_title }}
 	            </h4>
 	        </div>
+	        {% endif %}
 	        {% endfor %}
 	    </div>
 	</div>

@@ -37,7 +37,12 @@ os.makedirs("./build/media", exist_ok=True)
 
 def get_block_content(block):
     if isinstance(block, BasicBlock):
-        return markdown2.markdown(block.title)
+        text = block.title
+        if isinstance(block, HeaderBlock):
+            text = "# " + text
+        elif isinstance(block, SubheaderBlock):
+            text = "## " + text
+        return markdown2.markdown(text).replace("h2>", "h3>").replace("h1>", "h2>")
     elif isinstance(block, ImageBlock):
         url = block.display_source
         filename = os.path.basename(urlparse(url).path)
@@ -65,7 +70,7 @@ def get_template(name):
     return template
 
 
-def build(clean=False):
+def build(clean=True):
 
     if clean:
         try:
@@ -117,7 +122,7 @@ def build(clean=False):
 
     for page in pages:
         template = env.get_template(page["template"])
-        context = {"title": page["title"], "pages": pages}
+        context = {"title": page["title"], "pages": pages, "slug": page["slug"]}
         context.update(page["context"])
         html = template.render(context)
         path = "./build/{}.html".format(page["slug"])
