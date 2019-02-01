@@ -85,6 +85,16 @@ def build(clean=False):
 
     pages = []
 
+    # render index.html
+    pages.append(
+        {
+            "template": "base.html",
+            "slug": "index",
+            "title": "A Certain Magical Index",
+            "context": {"html": ""},
+        }
+    )
+
     for page in root.children:
         if isinstance(page, PageBlock):
             pages.append(
